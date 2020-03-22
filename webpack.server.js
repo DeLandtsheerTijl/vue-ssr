@@ -15,20 +15,26 @@ module.exports = merge(baseConfig, {
   },
 
   externals: nodeExternals({
-    whitelist: /\.css$/,
+    whitelist: /\.(css|sass|scss)$/,
   }),
 
   plugins: [new VueSSRServerPlugin()],
   module: {
     rules: [
       {
-        test: /\.css$/,
-        loader: 'sass-loader',
-        options: {
-          modules: {
-            localIdentName: '[local]_[hash:base64:8]',
+        test: /\.(css|sass|scss)$/,
+        use: [
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              importLoaders: 2,
+              modules: {
+                localIdentName: '[local]_[hash:base64:8]',
+              },
+            },
           },
-        },
+        ],
       },
     ],
   },

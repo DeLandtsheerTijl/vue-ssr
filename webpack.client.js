@@ -19,17 +19,10 @@ let config = merge(baseConfig, {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.(css|sass|scss)$/,
         use: [
           isProduction ? MiniCssExtractPlugin.loader : 'vue-style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: {
-                localIdentName: '[local]_[hash:base64:8]',
-              },
-            },
-          },
+          { loader: 'css-loader', options: { sourceMap: true, importLoaders: 1 } },
         ],
       },
     ],
