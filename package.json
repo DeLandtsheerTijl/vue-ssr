@@ -15,10 +15,16 @@
     "build-server": "cross-env NODE_ENV=production webpack --config webpack.server.js",
     "build-all": "run-p build-client build-server",
     "build": "run-s clean build-all",
+    "build-asp:client": "vue-cli-service build --dest ../wwwroot",
+    "build-asp:server": "cross-env WEBPACK_TARGET=node vue-cli-service build --dest ../wwwroot",
+    "build-asp-all": "run-p build-asp:client build-asp:server",
+    "build-asp": "run-s clean build-asp-all",
     "start-node": "node src/server.js"
   },
   "dependencies": {
     "cross-env": "^7.0.2",
+    "lodash": "^4.17.15",
+    "lodash.merge": "^4.6.2",
     "vue": "^2.6.11",
     "vue-router": "^3.1.5",
     "vuex": "^3.1.2"
@@ -35,6 +41,7 @@
     "@vue/cli-plugin-vuex": "^4.2.0",
     "@vue/cli-service": "^4.2.0",
     "@vue/eslint-config-airbnb": "^5.0.2",
+    "aspnet-prerendering": "^3.0.1",
     "axios": "^0.19.2",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.3",
