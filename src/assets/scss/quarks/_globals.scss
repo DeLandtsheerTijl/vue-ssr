@@ -1,0 +1,121 @@
+// -------------------------------------------------------------------
+// :: GLOBAL VARIABLES
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+// :: BREAKPOINTS
+// -------------------------------------------------------------------
+
+$breakpoint-desktop-large: 1310px;
+$breakpoint-desktop-default: 960px;
+$breakpoint-tablet-default: 769px;
+$breakpoint-mobile-default: 480px;
+
+// ============================================================================
+// :: Container
+// ============================================================================
+$container-spacing: 30px;
+
+$container-width-extra-large: 1310px;
+
+$container-width-large: 1028px;
+$container-width-large-breakpoint: $container-width-large + $container-spacing;
+
+$container-width-medium: 940px;
+$container-width-medium-breakpoint: $container-width-medium + $container-spacing;
+
+$container-width-small: 900px;
+$container-width-small-breakpoint: $container-width-small + $container-spacing;
+
+$container-width-tiny: 580px;
+$container-width-tiny-breakpoint: $container-width-tiny + $container-spacing;
+
+// ============================================================================
+// :: Settibgs
+// ============================================================================
+$headerbar-height-md: 6rem;
+$headerbar-height-lg: 6.8rem;
+
+$footer-height-md: 8rem;
+$footer-height-lg: 5rem;
+
+$sidebar-width: 320px;
+
+// ============================================================================
+// :: z-index
+// ============================================================================
+$z-index-highest: 10000;
+$z-index-higher: 1000;
+$z-index-high: 100;
+$z-index-base: 10;
+$z-index-low: 1;
+$z-index-lower: 0;
+$z-index-lowest: -1;
+
+// -------------------------------------------------------------------
+// :: FONT FAMILIES
+// -------------------------------------------------------------------
+
+$primary-font-family: 'Open Sans', sans-serif;
+$secondary-font-family: 'Montserrat', sans-serif;
+
+// -------------------------------------------------------------------
+// :: FONT SIZES
+// -------------------------------------------------------------------
+
+$font-size-h1-lg: 38px;
+$font-size-h1-sm: 20px;
+
+$font-size-h2-lg: 36px;
+$font-size-h2-sm: 20px;
+
+$font-size-h3-lg: 18px;
+$font-size-h3-sm: 18px;
+
+// $font-size-h4-lg:         20px;
+// $font-size-h4-sm:         18px;
+
+// $font-size-h5:            20px;
+// $font-size-h6:            16px;
+
+$font-size-lg: 20px;
+$font-size-md: 18px;
+$font-size: 16px;
+$font-size-sm: 14px;
+$font-size-xs: 13px;
+$font-size-xxs: 12px;
+
+// -------------------------------------------------------------------
+// :: LINE HEIGTHS
+// -------------------------------------------------------------------
+
+$line-height-h1-lg: 44px;
+$line-height-h1-sm: 24px;
+
+$line-height-h2-lg: 44px;
+$line-height-h2-sm: 24px;
+
+$line-height-h3-lg: 22px;
+$line-height-h3-sm: 22px;
+
+// $line-height-h4-lg:       30px;
+// $line-height-h4-sm:       27px;
+
+// $line-height-h5:          30px;
+// $line-height-h6:          24px;
+
+// $line-height-lg:          30px;
+// $line-height-md:          27px;
+$line-height: 22px;
+$line-height-sm: 18px;
+$line-height-xs: 16px;
+
+// -------------------------------------------------------------------
+// :: FONT WEIGHTS
+// -------------------------------------------------------------------
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 900;

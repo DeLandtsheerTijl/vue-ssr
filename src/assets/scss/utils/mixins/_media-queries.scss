@@ -1,0 +1,23 @@
+// -------------------------------------------------------------------
+// :: MEDIA QUERIES
+// -------------------------------------------------------------------
+
+// Techorama respond-to
+@mixin respond-above($_min-width) {
+  @media screen and (min-width: $_min-width) {
+    @content;
+  }
+}
+
+// Techorama respond-at
+@mixin respond-underneath($_max-width) {
+  @media screen and (max-width: $_max-width) {
+    @content;
+  }
+}
+
+@mixin respond-between($_min-width, $_max-width) {
+  @media screen and (min-width: $_min-width) and (max-width: $_max-width) {
+    @content;
+  }
+}

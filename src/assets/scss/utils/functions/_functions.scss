@@ -1,0 +1,11 @@
+// -------------------------------------------------------------------
+// :: CONVERT PX TO REM
+// -------------------------------------------------------------------
+// Important: rem-units are not supported on <IE9
+// and we don't provide a fallback
+//
+// - http://caniuse.com/#search=rem
+
+@function rem($_value) {
+	@return #{$_value / 10px}rem;
+}

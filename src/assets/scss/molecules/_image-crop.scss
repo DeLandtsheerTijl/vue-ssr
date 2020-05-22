@@ -1,0 +1,70 @@
+
+  .vue-image-crop-upload .vicp-wrap{
+    width: fit-content!important;
+  }
+
+  .vue-image-crop-upload .vicp-wrap .vicp-operate{
+    right: auto;
+  }
+
+  .vue-image-crop-upload .vicp-wrap .vicp-operate a{
+    color: $icongreen!important;
+  }
+
+  .vicp-progress {
+
+    background-color: $lighterblack!important;
+    box-shadow: 0 2px 6px 0 rgba($lighterblack, 0.3)!important;
+
+    &::after {
+      box-shadow: 0 1px 4px 0 rgba($lighterblack, 0.7)!important;
+      background-color: $lighterblack!important;
+    }
+  }
+
+  input[type=range] {
+    &::-webkit-slider-thumb {
+      background-color: lighten($icongreen, 10)!important;
+    }
+
+    &::-moz-range-thumb {
+      background-color: lighten($icongreen, 10)!important;
+    }
+
+    &::-ms-thumb {
+      background-color: lighten($icongreen, 10)!important;
+    }
+
+    &::-webkit-slider-runnable-track {
+      background-color: rgba($icongreen, 0.3)!important;
+    }
+
+    &::-moz-range-track {
+      background-color: rgba($icongreen, 0.3)!important;
+    }
+    &::-ms-fill-lower {
+      background-color: rgba($icongreen, 0.3)!important;
+    }
+
+    &::-ms-fill-upper {
+      background-color: rgba($icongreen, 0.15)!important;
+    }
+
+    &:focus {
+      &::-webkit-slider-runnable-track {
+        background-color: rgba($icongreen, 0.5)!important;
+      }
+
+      &::-moz-range-track {
+        background-color: rgba($icongreen, 0.5)!important;
+      }
+
+      &::-ms-fill-lower {
+        background-color: rgba($icongreen, 0.45)!important;
+      }
+
+      &::-ms-fill-upper {
+        background-color: rgba($icongreen, 0.25)!important;
+      }
+    }
+  }

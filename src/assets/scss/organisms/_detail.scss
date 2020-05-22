@@ -1,0 +1,109 @@
+// ==========================================================================
+// GENERAL
+// ==========================================================================
+.p-detail__general {
+  display: flex;
+  flex-direction: column;
+  @include respond-above($breakpoint-tablet-default) {
+    flex-direction: row;
+  }
+}
+
+.p-detail__general__about-us {
+  @include respond-above($breakpoint-tablet-default) {
+    flex: 2;
+  }
+  a {
+    color: $green;
+    text-decoration: underline;
+  }
+}
+
+.p-detail__general__title {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.p-detail__general__member {
+  background-color: $lightblue;
+  padding: 2.5rem;
+  border-radius: 0.6rem;
+  margin: 1rem -2rem;
+
+  @include respond-above($breakpoint-tablet-default) {
+    margin: 0rem 0rem 0rem 4rem;
+    flex: 1;
+  }
+}
+
+.p-detail__genral__link {
+  color: $green;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 1.4rem;
+}
+
+.p-detail__cta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 1rem;
+
+  @include respond-above($breakpoint-mobile-default) {
+    padding: 0.4rem 1rem;
+    font-size: inherit;
+    align-items: center;
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+  }
+
+  @include respond-above($breakpoint-tablet-default) {
+    padding: 0.8rem 2rem;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+// ==========================================================================
+// FOLLOWERS
+// ==========================================================================
+.p-detail__followers {
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+  width: auto;
+
+  .c-user-card {
+    width: 100%;
+    @include respond-above($breakpoint-tablet-default) {
+      width: calc((100% / 2));
+    }
+  }
+}
+
+// ==========================================================================
+// CHALLENGE
+// ==========================================================================
+.p-detail__challenge-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+
+  @include respond-above($breakpoint-tablet-default) {
+    margin-left: -1.3rem;
+  }
+
+  .m-challenge {
+    margin: 0 0rem 2rem 0rem;
+    height: 35rem;
+
+    @include respond-above($breakpoint-tablet-default) {
+      margin: 0 1rem 2rem 1rem;
+      width: calc((100% / 2) - 2rem);
+      height: auto;
+    }
+  }
+}

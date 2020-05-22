@@ -1,0 +1,112 @@
+body {
+  font-size: 1.4rem;
+  line-height: 1.5;
+
+  font-family: $primary-font-family;
+}
+
+// -------------------------------------------------------------------
+// :: FONTS
+// -------------------------------------------------------------------
+
+@include get-font('Open Sans', '~@/assets/fonts/open-sans/opensans-regular', $font-weight-light, normal);
+@include get-font('Open Sans', '~@/assets/fonts/open-sans/opensans-semibold', $font-weight-semi-bold, normal);
+@include get-font('Open Sans', '~@/assets/fonts/open-sans/opensans-bold', $font-weight-bold, normal);
+
+@include get-font('Montserrat', '~@/assets/fonts/montserrat/montserrat-regular', $font-weight-light, normal);
+@include get-font('Montserrat', '~@/assets/fonts/montserrat/montserrat-semibold', $font-weight-semi-bold, normal);
+@include get-font('Montserrat', '~@/assets/fonts/montserrat/montserrat-bold', $font-weight-bold, normal);
+
+// -------------------------------------------------------------------
+// :: BLOCK ELEMENTS
+// -------------------------------------------------------------------
+
+h1,
+.h1 {
+  font-family: $secondary-font-family;
+  font-size: rem($font-size-h1-sm);
+  font-weight: $font-weight-bold;
+  line-height: rem($line-height-h1-sm);
+  //margin-bottom: rem(30px);
+
+  @include respond-above($breakpoint-mobile-default) {
+    font-size: rem($font-size-h1-lg);
+    line-height: rem($line-height-h1-lg);
+    //margin-bottom: rem(20px);
+  }
+}
+
+h2,
+.h2 {
+  font-family: $secondary-font-family;
+  font-size: rem($font-size-h2-sm);
+  font-weight: $font-weight-bold;
+  line-height: rem($line-height-h2-sm);
+
+  @include respond-above($breakpoint-tablet-default) {
+    font-size: rem($font-size-h2-lg);
+    line-height: rem($line-height-h2-lg);
+  }
+
+  color: $green;
+}
+
+h3,
+.h3 {
+  font-family: $secondary-font-family;
+  font-size: rem($font-size-h3-sm);
+  font-weight: $font-weight-bold;
+  line-height: rem($line-height-h3-sm);
+
+  @include respond-underneath($breakpoint-tablet-default) {
+    font-size: rem($font-size-h3-lg);
+    line-height: rem($line-height-h3-lg);
+  }
+}
+
+// h4,
+// .h4 {
+// 	font-family: $secondary-font-family;
+// 	font-size: rem($font-size-h4-sm);
+// 	font-weight: $font-weight-bold;
+// 	line-height: rem($line-height-h4-sm);
+
+// 	@include respond-underneath($breakpoint-tablet-default) {
+// 		font-size: rem($font-size-h4-lg);
+// 		line-height: rem($line-height-h4-lg);
+// 	}
+// }
+
+// h5,
+// .h5 {
+// 	font-family: $secondary-font-family;
+// 	font-size: rem($font-size-h5);
+// 	font-weight: $font-weight-normal;
+// 	line-height: rem($line-height-h5);
+// }
+
+// h6,
+// .h6 {
+// 	font-family: $secondary-font-family;
+// 	font-size: rem($font-size-h6);
+// 	font-weight: $font-weight-normal;
+// 	line-height: rem($line-height-h6);
+// }
+
+h6 {
+  color: $black;
+  opacity: 0.6;
+  text-transform: uppercase;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+p {
+  font-size: rem($font-size-sm);
+  font-weight: $font-weight-normal;
+  line-height: rem($line-height);
+  font-family: $primary-font-family;
+}

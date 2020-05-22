@@ -1,0 +1,49 @@
+// ============================================================================
+// :: LINK
+// ============================================================================
+
+.a-link {
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 1rem 1rem;
+  font-weight: bold;
+  text-decoration: underline;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @include respond-above($breakpoint-tablet-default) {
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+  }
+}
+
+.a-link--white {
+  color: $white;
+
+  &:hover {
+    color: darken($white, 3);
+  }
+}
+
+.a-link--green {
+  color: $green;
+
+  &:hover {
+    color: darken($green, 5);
+  }
+
+  &:active{
+    color: darken($green, 5);
+  }
+}
+
+.a-link--underline{
+  text-decoration: underline;
+}
+
+.a-link--light{
+  color: #0006;
+  text-align: right;
+}

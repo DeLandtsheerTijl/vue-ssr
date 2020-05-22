@@ -1,0 +1,51 @@
+// ==========================================================================
+// Colors
+// ==========================================================================
+
+$white: #FFFFFF;
+$black: #000000;
+
+$white--darker: #F4F4F4;
+$black-lighter: #30363D;
+$lighterblack: #535050;
+$lightgray: #B3BDBD;
+$gray--extra-light: #D8D8D8;
+
+
+$lightblue: #F5FAFC;
+$lightblue--lighter: #ECF6F9;
+$skyblue: #8DD0E3;
+$darkcyan: #1D8498;
+
+$lightseagreen: #00B1A9;
+$green: #098172;
+$green--darker: #0C5A58;
+$icongreen: #4BA9A6;
+$green--extra-light: #A4C8C3;
+$green-lighter-10: #DDEEEE;
+$green--light: rgb(234, 241, 243);
+
+$error: #f22435;
+$red: #ff0000;
+$blue: #0000ff;
+
+
+// -------------------------------------------------------------------
+// :: GRADIENTS
+// -------------------------------------------------------------------
+
+$mobile-navigation-gradient: linear-gradient(105.83deg, #3E8394 35.7%, #4BA9A6 191.73%);
+$header-gradient: linear-gradient(98.67deg, #3E8394 15.34%, #4BA9A6 62.08%);
+
+// -------------------------------------------------------------------
+// :: OVERLAYS
+// -------------------------------------------------------------------
+
+$overlay-activity-hero: linear-gradient(180deg, rgba(80, 80, 80, 0) 23.96%, #0D3937 100%);
+
+
+// -------------------------------------------------------------------
+// :: BOX SHADOWS
+// -------------------------------------------------------------------
+
+$box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.07);

@@ -1,0 +1,159 @@
+// ============================================================================
+// :: BUTTONS
+// ============================================================================
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.a-button {
+  display: inline-block;
+  padding: 0.2rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: $secondary-font-family;
+
+  font-size: $font-size-xxs;
+
+  &:hover {
+    text-decoration: none;
+  }
+  &:focus {
+    outline: 0;
+  }
+
+  @include respond-above($breakpoint-mobile-default) {
+    padding: 0.4rem 1rem;
+    font-size: unset;
+  }
+  @include respond-above($breakpoint-tablet-default) {
+    padding: 0.8rem 2rem;
+  }
+}
+
+.a-button--primary {
+  color: $white;
+  background-color: $green;
+  border: 2px solid $green;
+
+  &:hover {
+    color: $white;
+    background-color: darken($green, 3);
+  }
+  &:disabled {
+    cursor: not-allowed;
+  }
+  &:focus {
+    color: $white;
+  }
+}
+
+.loading{
+  background-color: #88ada9;
+  border-color: #88ada9;
+  cursor: auto;
+
+  &:hover {
+    color:white;
+    background-color: #88ada9;
+    border-color: #88ada9;
+  }
+
+}
+
+.a-button--secondary {
+  color: $green;
+  background-color: $white;
+  text-align: center;
+
+  &:hover {
+    color: $green;
+    background-color: darken($white, 3);
+  }
+}
+
+.a-button--secondary-transparent{
+  color: $green;
+  background-color: transparent;
+  text-align: center;
+
+  &:hover {
+    color: $green;
+    background-color: transparent;
+  }
+
+  &:focus {
+    color: $green;
+  }
+}
+
+.a-button--flat{
+  background: white;
+  border: none;
+  border-radius: 0;
+  color: $green;
+
+  &:hover {
+    color: $green;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    color: $green;
+  }
+}
+
+.a-button--green-border {
+  box-sizing: border-box;
+  border: 2px solid $green;
+}
+
+.a-button--icon {
+  width: 6rem;
+  margin-left: 3rem;
+  margin-right: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 10px rgba(62, 131, 148, 0.2);
+  color: $black;
+  background-color: $white;
+
+  i {
+    color: $green;
+  }
+
+  @include respond-above($breakpoint-tablet-default) {
+    margin: 0;
+    padding: 1.35rem 1.6rem;
+    min-width: 137px;
+
+    i {
+      margin-right: 1rem;
+    }
+  }
+}
+
+.a-adaptive-button {
+  color: $white;
+  background-color: $green;
+  border: 0.2rem solid $green;
+
+  @include respond-above($breakpoint-mobile-default) {
+    color: $green;
+    background-color: $white;
+
+    box-sizing: border-box;
+    border: 2px solid $green;
+
+    &:hover {
+      color: $green;
+      background-color: $white--darker;
+    }
+  }
+}

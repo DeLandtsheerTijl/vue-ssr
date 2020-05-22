@@ -1,0 +1,75 @@
+.m-card {
+  @include tile;
+  background-color: $white;
+  font-family: $secondary-font-family;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+
+  @include respond-above($breakpoint-tablet-default) {
+    flex-direction: row;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.m-card__picture {
+  width: auto;
+  height: 200px;
+  overflow: hidden;
+  justify-content: center;
+  min-width: 120px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .m-card__close {
+    color: white;
+    position: absolute;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  @include respond-above($breakpoint-tablet-default) {
+    height: 120px;
+    width: 120px;
+  }
+}
+
+.m-card__picture__img {
+  width: 100%;
+  min-height: 120px;
+}
+
+.m-card__text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2rem;
+  @include respond-above($breakpoint-tablet-default) {
+    flex: 2;
+  }
+}
+
+.m-card__title {
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-family: $secondary-font-family;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}

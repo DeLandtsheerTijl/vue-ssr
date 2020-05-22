@@ -1,0 +1,9 @@
+.a-divider{
+    height: 2px;
+    width: 100%;
+    background-color: rgba(9, 129, 114, 0.1);
+}
+
+.a-divider--dark-white{
+    background-color: $white--darker;
+}

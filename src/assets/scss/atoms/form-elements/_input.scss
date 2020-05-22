@@ -1,0 +1,229 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  text-align: right;
+  margin: 0;
+  margin-right: .3rem;
+  -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type=number] {
+  margin-right: .3rem;
+  -moz-appearance: textfield;
+}
+
+.a-input {
+  border-style: solid;
+  border: 1px solid $green;
+  border-radius: 0.6rem;
+  padding: 1rem;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.a-input--wide{
+  width: 30rem;
+  max-width: 100%;
+}
+
+.a-input__search {
+  border: 2px solid $green-lighter-10;
+  padding-right: 3rem;
+
+  &::placeholder {
+    color: lightgray;
+  }
+}
+
+.a-textarea {
+  height: 20rem;
+}
+
+// ============================================================================
+// :: Custom checkbox
+// ============================================================================
+.a-input__checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.a-input__checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.a-input__file{
+  display: none;
+}
+
+.a-input__image{
+  cursor: pointer;
+  max-width: 200px;
+  border-radius: .5rem;
+}
+
+.a-input__checkbox-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 0px 2px #098172;
+}
+
+.a-input__checkbox-container input:checked ~ .a-input__checkbox-checkmark {
+  background-color: #098172;
+}
+
+.a-input__checkbox-container input:disabled ~ .a-input__checkbox-checkmark {
+  background-color: #88ada9;
+  border-color: #88ada9;
+  box-shadow: 0px 0px 0px 2px #88ada9;
+  cursor: auto;
+}
+
+.a-input__checkbox-checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.a-input__checkbox-container input:checked ~ .a-input__checkbox-checkmark:after {
+  display: block;
+}
+
+.a-input__checkbox-container .a-input__checkbox-checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+// ============================================================================
+// :: Label
+// ============================================================================
+.a-input__label {
+  color: $lighterblack;
+
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 2rem;
+
+  input,
+  textarea,
+  select {
+    margin-top: 0.5rem;
+  }
+}
+
+.a-input__label--sticky{
+  display: flex;
+
+  .a-input__label{
+    border-style: solid;
+    border: 1px solid #098172;
+    border-left: none;
+    border-radius: 0rem .6rem .6rem 0;
+    padding: 1rem;
+    margin-top: .5rem;
+    margin-right: 2rem;
+  }
+
+  .a-input{
+    border-radius: .6rem 0 0 .6rem;
+    width: 10rem;
+    margin-top: .5rem;
+    margin-right: 0;
+    background: $lightblue;
+  }
+}
+
+.a-input__label--duration{
+  border-radius: 0;
+  display: flex;
+  margin-top: .5rem;
+
+  .a-input{
+    width: 7rem;
+    border-radius: 0;
+    display: flex;
+    padding-left: 0;
+
+
+    input{
+      border: none;
+      width: 3rem;
+      margin-top: 0;
+    }
+
+    input:focus{
+      outline: none;
+    }
+
+    .a-input__label{
+      margin-top: 0;
+      width: 2rem;
+    }
+  }
+
+  .a-input:first-of-type{
+    border-radius: .6rem 0 0 .6rem;;
+    border-right: 0;
+  }
+
+  .a-input:last-of-type{
+    border-radius: 0rem .6rem .6rem 0;
+    border-left: 0;
+  }
+}
+
+.a-input__validation-wrapper {
+  width: 100%;
+}
+
+.a-input__validation-message {
+  color: $error;
+  display: block;
+}
+
+//Datetime:
+.vdatetime-input {
+  width: 100%;
+  height: 4rem;
+  border-radius: 0.6rem;
+  border: 1px solid $green;
+  padding-left: 0.5rem;
+}
+
+.theme-green .vdatetime-popup__header,
+.theme-green .vdatetime-calendar__month__day--selected > span > span,
+.theme-green .vdatetime-calendar__month__day--selected:hover > span > span {
+  background: $green;
+}
+
+.theme-green .vdatetime-year-picker__item--selected,
+.theme-green .vdatetime-time-picker__item--selected,
+.theme-green .vdatetime-popup__actions__button {
+  color: $green;
+}

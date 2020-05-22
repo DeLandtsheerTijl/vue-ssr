@@ -1,0 +1,139 @@
+.m-cover-photo {
+  position: relative;
+  border-top-left-radius: 0.6rem;
+  border-top-right-radius: 0.6rem;
+  height: 100%;
+  min-height: 20rem;
+  color: #ffffff;
+  font-weight: bold;
+  max-height: 37.5rem;
+  // overflow: hidden;
+
+  h1 {
+    font-size: rem($font-size-h1-sm);
+    line-height: rem($line-height-h1-sm);
+
+    @include respond-above($breakpoint-tablet-default) {
+      font-size: rem(44px);
+      line-height: rem(54px);
+    }
+  }
+}
+
+.m-cover-photo__img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  min-height: 20rem;
+  max-height: 37.5rem;
+}
+
+.m-cover-photo__gradient {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 23.96%, #0d3937 100%);
+  //   z-index: 0;
+}
+
+.m-cover-photo__content {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  z-index: 2;
+  padding-left: 2rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.m-cover-photo__title {
+  padding-left: 2rem;
+  // margin-right: 30%;
+}
+
+.m-cover-photo__profile-pic {
+  height: 100px;
+  width: 100px;
+  min-height: 100px;
+  min-width: 100px;
+  margin-bottom: 0.5rem;
+  @include tile;
+
+  @include respond-above($breakpoint-tablet-default) {
+    height: 190px;
+    width: 190px;
+    min-height: 190px;
+    min-width: 190px;
+
+    margin-bottom: -6rem;
+  }
+}
+
+.m-cover-photo__profile-pic__img {
+  // border-radius: 0.6rem;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* EVENT COVER PHOTO */
+
+.m-cover-photo--no-date{
+  .m-cover-photo__content {
+    @include spread;
+    z-index: $z-index-base;
+  
+    color: $white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 2rem 0;
+    flex-direction: column;
+  
+    span {
+      margin-left: 10.5rem;
+      font-size: $font-size-xxs;
+      font-weight: $font-weight-normal;
+    }
+  }
+  
+  .m-cover-photo__date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    margin: 0 2.3rem;
+    padding: 0 1.5rem;
+  
+    border-bottom: 0.2rem solid $white;
+  
+    font-weight: $font-weight-bold;
+  
+    span {
+      display: inline-block;
+      margin-left: 0;
+    }
+  
+    .m-cover-photo__day {
+      font-size: 2.4rem;
+      line-height: $line-height;
+    }
+  
+    .m-cover-photo__month {
+      font-size: $font-size-xxs;
+      margin-bottom: 0.8rem;
+    }
+  }
+  
+  .m-cover-photo__info {
+    display: flex;
+  
+    .m-cover-photo__title {
+      margin-bottom: 0;
+      padding: 0;
+    }
+  }
+}

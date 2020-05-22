@@ -1,0 +1,270 @@
+// ============================================================================
+// :: Settings
+// ============================================================================
+$grid-gutter: $container-spacing !default;
+$grid-gutter-row: $grid-gutter !default;
+
+$_grid-col-1: 100% / 12;
+$_grid-col-2: 100% / 6;
+$_grid-col-3: 100% / 4;
+$_grid-col-4: 33.3%;
+$_grid-col-5: 100% / 12 * 5;
+$_grid-col-6: 49.9%;
+$_grid-col-7: 100% / 12 * 7;
+$_grid-col-8: 66.5%;
+$_grid-col-9: 100% / 12 * 9;
+$_grid-col-10: 100% / 12 * 10;
+$_grid-col-11: 100% / 12 * 11;
+$_grid-col-12: 100%;
+
+// ============================================================================
+// :: Grid
+// ============================================================================
+.l-grid {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
+}
+
+// ============================================================================
+// :: Elements - Grid col
+// ============================================================================
+[class*="l-grid__col"] {
+	flex-grow: 1;
+	flex-shrink: 1;
+	align-self: auto;
+}
+
+// ============================================================================
+// :: Elements - Grid row
+// ============================================================================
+.l-grid__row{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+
+	[class*="l-grid__col"]{
+		flex-grow: 0;
+		flex-shrink: 0;
+	}
+}
+
+// ============================================================================
+// :: Elements - col x-12
+// ============================================================================
+.l-grid__col-1-12 {
+	width: $_grid-col-2;
+	@include respond-above($breakpoint-tablet-default){width: $_grid-col-1;}
+}
+
+.l-grid__col-2-12 {
+  width: $_grid-col-12;
+  @include respond-above($breakpoint-mobile-default){width: $_grid-col-6;}
+  @include respond-above($breakpoint-tablet-default){width: $_grid-col-4;}
+	@include respond-above($breakpoint-desktop-default){width: $_grid-col-2;}
+}
+
+.l-grid__col-3-12 {
+	width: $_grid-col-12;
+	@include respond-above($breakpoint-mobile-default){width: $_grid-col-6;}
+	@include respond-above($breakpoint-tablet-default){width: $_grid-col-3;}
+}
+
+.l-grid__col-4-12 {
+	width: $_grid-col-12;
+	@include respond-above($breakpoint-mobile-default){width: $_grid-col-6;}
+	@include respond-above($breakpoint-tablet-default){width: $_grid-col-4;}
+}
+
+.l-grid__col-5-12 {
+	width: $_grid-col-12;
+	@include respond-above($breakpoint-mobile-default){width: $_grid-col-6;}
+	// @include respond-above($breakpoint-tablet-default){width: $_grid-col-5;}
+}
+
+.l-grid__col-6-12 {
+	width: $_grid-col-12;
+	@include respond-above($breakpoint-mobile-default){width: $_grid-col-6;}
+}
+
+.l-grid__col-7-12 {
+  width: $_grid-col-12;
+  @include respond-above($breakpoint-mobile-default){width: $_grid-col-6;}
+	// @include respond-above($breakpoint-tablet-default){width: $_grid-col-7;}
+}
+
+.l-grid__col-8-12 {
+	width: $_grid-col-12;
+	@include respond-above($breakpoint-mobile-default){width: $_grid-col-6;}
+	@include respond-above($breakpoint-tablet-default){width: $_grid-col-8;}
+}
+
+.l-grid__col-9-12 {
+	width: $_grid-col-12;
+	@include respond-above($breakpoint-mobile-default){width: $_grid-col-7;}
+	@include respond-above($breakpoint-tablet-default){width: $_grid-col-9;}
+}
+
+.l-grid__col-10-12 {
+	width: $_grid-col-8;
+	@include respond-above($breakpoint-tablet-default){width: $_grid-col-10;}
+}
+
+.l-grid__col-11-12 {
+	width: $_grid-col-10;
+	@include respond-above($breakpoint-tablet-default){width: $_grid-col-11;}
+}
+
+.l-grid__col-12-12 {
+	width: $_grid-col-12;
+}
+
+// ============================================================================
+// :: Modifiers - with spacing
+// ============================================================================
+.l-grid--with-spacing {
+
+	width: calc(100% + #{$grid-gutter});
+	margin: calc((#{$grid-gutter} * -0.5));
+
+	> [class*="l-grid__col"] {
+		flex-grow: 0;
+		flex-shrink: 0;
+    margin: #{$grid-gutter-row * 0.5};
+
+    // In order to avoid using !important, we manipulate l-container__stretch
+    // in this specificty: when l-container__stretch is used on a l-grid__col
+    // within the modifiers l-grid--with-spacing, we do not apply any
+    // spacing but stretch it from the start of the screen till the end
+    &.l-container__stretch {
+
+      @include respond-underneath($breakpoint-tablet-default) {
+        margin: 0;
+        // negative margin of half the container spacing to place it on the
+        // left side of the screen
+        margin-left: $container-spacing * -0.5;
+        margin-right: $container-spacing * -0.5;
+        // width plus the container spacing of 30px to stretch it to the
+        // right side of the screen
+        width: calc(100% + #{$container-spacing});
+      }
+    }
+
+		@include respond-above($breakpoint-tablet-default) {
+			margin: #{$grid-gutter-row * 0.5};
+		}
+	}
+
+	> .l-grid__col-1-12 {
+		width: calc(#{$_grid-col-2} - #{$grid-gutter});
+		@include respond-above($breakpoint-tablet-default){width: calc(#{$_grid-col-1} - #{$grid-gutter});}
+	}
+
+	> .l-grid__col-2-12 {
+    width: calc(#{$_grid-col-12} - #{$grid-gutter});
+    @include respond-above($breakpoint-mobile-default){width: calc(#{$_grid-col-6} - #{$grid-gutter});}
+    @include respond-above($breakpoint-tablet-default){width: calc(#{$_grid-col-4} - #{$grid-gutter});}
+		@include respond-above($breakpoint-desktop-default){width: calc(#{$_grid-col-2} - #{$grid-gutter});}
+	}
+
+	> .l-grid__col-3-12 {
+		width: calc(#{$_grid-col-12} - #{$grid-gutter});
+		@include respond-above($breakpoint-mobile-default){width: calc(#{$_grid-col-6} - #{$grid-gutter});}
+		@include respond-above($breakpoint-tablet-default){width: calc(#{$_grid-col-3} - #{$grid-gutter});}
+	}
+
+	> .l-grid__col-4-12 {
+		width: calc(#{$_grid-col-12} - #{$grid-gutter});
+		@include respond-above($breakpoint-mobile-default){width: calc(#{$_grid-col-6} - #{$grid-gutter	});}
+		@include respond-above($breakpoint-tablet-default){width: calc(#{$_grid-col-4} - #{$grid-gutter});}
+	}
+
+	> .l-grid__col-5-12 {
+		width: calc(#{$_grid-col-12} - #{$grid-gutter});
+    // @include respond-above($breakpoint-mobile-default){width: calc(#{$_grid-col-5} - #{$grid-gutter});}
+    @include respond-above($breakpoint-tablet-default){width: calc(#{$_grid-col-5} - #{$grid-gutter});}
+	}
+
+	> .l-grid__col-6-12 {
+		width: calc(#{$_grid-col-12} - #{$grid-gutter});
+		@include respond-above($breakpoint-tablet-default){width: calc(#{$_grid-col-6} - #{$grid-gutter});}
+	}
+
+	> .l-grid__col-7-12 {
+		width: calc(#{$_grid-col-12} - #{$grid-gutter});
+    // @include respond-above($breakpoint-mobile-default){width: calc(#{$_grid-col-7} - #{$grid-gutter});}
+    @include respond-above($breakpoint-tablet-default){width: calc(#{$_grid-col-7} - #{$grid-gutter});}
+	}
+
+	> .l-grid__col-8-12 {
+		width: calc(#{$_grid-col-12} - #{$grid-gutter});
+		@include respond-above($breakpoint-mobile-default){width: calc(#{$_grid-col-6} - #{$grid-gutter});}
+		@include respond-above($breakpoint-tablet-default){width: calc(#{$_grid-col-8} - #{$grid-gutter});}
+	}
+
+	> .l-grid__col-9-12 {
+    width: calc(#{$_grid-col-12} - #{$grid-gutter});
+    @include respond-above($breakpoint-mobile-default){width: calc(#{$_grid-col-7} - #{$grid-gutter});}
+		@include respond-above($breakpoint-tablet-default){width: calc(#{$_grid-col-9} - #{$grid-gutter});}
+	}
+
+	> .l-grid__col-10-12 {
+		width: calc(#{$_grid-col-8} - #{$grid-gutter});
+		@include respond-above($breakpoint-tablet-default){width: calc(#{$_grid-col-10} - #{$grid-gutter});}
+	}
+
+	> .l-grid__col-11-12 {
+		width: calc(#{$_grid-col-10} - #{$grid-gutter});
+		@include respond-above($breakpoint-tablet-default){width: calc(#{$_grid-col-11} - #{$grid-gutter});}
+	}
+
+	> .l-grid__col-12-12 {
+		width: calc(#{$_grid-col-12} - #{$grid-gutter});
+	}
+
+}
+
+// ============================================================================
+// :: Modifiers - No tablet spacing
+// ============================================================================
+.l-grid--no-tablet-spacing {
+
+  @include respond-underneath($breakpoint-tablet-default) {
+    width: 100%;
+    margin: 0;
+  }
+
+  // every l-grid__col will be affected, if there is a l-container__stretch
+  // on the same element we do not manipulate it
+  > [class*="l-grid__col"] {
+
+		@include respond-underneath($breakpoint-tablet-default) {
+      margin: 0;
+      width: 100%;
+		}
+	}
+}
+
+// ============================================================================
+// :: Modifiers - No mobile spacing
+// ============================================================================
+.l-grid--no-mobile-spacing {
+
+  @include respond-underneath($breakpoint-mobile-default) {
+    width: 100%;
+    margin: 0;
+  }
+
+  // every l-grid__col will be affected, if there is a l-container__stretch
+  // on the same element we do not manipulate it
+  > [class*="l-grid__col"] {
+
+		@include respond-underneath($breakpoint-mobile-default) {
+      margin: 0;
+      width: 100%;
+		}
+	}
+}

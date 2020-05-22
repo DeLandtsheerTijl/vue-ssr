@@ -1,0 +1,48 @@
+// ==========================================================================
+// NAVIGATION
+// ==========================================================================
+
+.m-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @include respond-above($breakpoint-tablet-default) {
+    padding-bottom: 0rem;
+  }
+}
+
+.m-navigation__nav {
+  @include respond-above($breakpoint-tablet-default) {
+    display: flex;
+  }
+}
+
+.m-navigation__item {
+  padding: 1.5rem 0;
+
+  a {
+    color: $white;
+
+    font-family: $secondary-font-family;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    letter-spacing: 0.05em;
+    font-weight: $font-weight-semi-bold;
+    text-transform: uppercase;
+  }
+
+  @include respond-above($breakpoint-tablet-default) {
+    // padding: 0 2.5rem;
+    padding: 0 2.5rem;
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+  }
+}
+
+.m-navigation__item--bold {
+  font-weight: bold;
+}

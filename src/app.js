@@ -1,12 +1,14 @@
-/* eslint-disable import/prefer-default-export */
 import Vue from 'vue';
 import { sync } from 'vuex-router-sync';
-
+import App from './App.vue';
 import router from './router';
 import store from './store';
+// eslint-disable-next-line no-unused-vars
+require('./test.scss');
 
-import App from './App.vue';
+Vue.config.productionTip = false;
 
+// eslint-disable-next-line import/prefer-default-export
 export function createApp() {
   sync(store, router);
 

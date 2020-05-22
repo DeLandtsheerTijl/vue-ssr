@@ -1,0 +1,37 @@
+// ============================================================================
+// :: View
+// ============================================================================
+
+.l-view {
+  display: flex;
+  // height: calc(100% - #{$footer-height-md});
+  // flex-direction: column;
+  height: auto;
+
+  @include respond-above($breakpoint-tablet-default) {
+    // height: calc(100% - #{$footer-height-lg});
+    height: auto;
+  }
+
+  @include respond-above($breakpoint-desktop-large) {
+    max-width: $container-width-extra-large;
+    margin: auto;
+  }
+}
+
+.l-detail-view {
+  padding: unset;
+
+  @include respond-between($breakpoint-mobile-default, $breakpoint-tablet-default) {
+    padding: 0 2rem;
+  }
+}
+
+.o-sidebar__inner {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+
+  @include respond-above($breakpoint-desktop-large) {
+    border-radius: 0.6rem;
+  }
+}

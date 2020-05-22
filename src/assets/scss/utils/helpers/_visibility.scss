@@ -1,0 +1,48 @@
+// ============================================================================
+// :: VISIBILITY UTILS
+// ============================================================================
+.u-hide {
+  display: none !important;
+}
+
+.u-mobile-hide {
+
+  @include respond-underneath($breakpoint-mobile-default) {
+    display: none !important;
+  }
+}
+
+.u-mobile-show {
+
+  @include respond-above($breakpoint-mobile-default) {
+    display: none !important;
+  }
+}
+
+.u-tablet-hide {
+
+  @include respond-underneath($breakpoint-tablet-default) {
+      display: none !important;
+  }
+}
+
+.u-tablet-show {
+
+  @include respond-above($breakpoint-tablet-default) {
+    display: none !important;
+  }
+}
+
+.u-desktop-hide {
+
+  @include respond-underneath($breakpoint-desktop-default) {
+    display: none !important;
+  }
+}
+
+.u-desktop-show {
+
+  @include respond-above($breakpoint-desktop-default) {
+    display: none !important;
+  }
+}

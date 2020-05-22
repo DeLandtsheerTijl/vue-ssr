@@ -1,0 +1,48 @@
+.o-page {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+
+  margin: 2rem 2rem 0;
+
+  @include respond-above($breakpoint-tablet-default) {
+    margin-top: 6rem;
+    margin-right: 6.5rem;
+  }
+
+  @include respond-above($breakpoint-desktop-large) {
+    margin-right: 0;
+  }
+}
+
+.o-page--overflow-unset {
+  overflow: unset;
+}
+
+.o-page--white {
+  background-color: $white;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+}
+
+.o-page--detail {
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+
+  @include respond-above($breakpoint-mobile-default) {
+    margin-top: 3rem;
+    border-radius: 0.6rem;
+    box-shadow: 0 0.4rem 4rem rgba(0, 0, 0, 0.05);
+  }
+
+  @include respond-above($breakpoint-tablet-default) {
+    margin-left: 4rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  @include respond-above($breakpoint-desktop-large) {
+    border-radius: 0.6rem;
+  }
+}

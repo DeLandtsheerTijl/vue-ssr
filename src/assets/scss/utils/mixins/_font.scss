@@ -1,0 +1,14 @@
+// -------------------------------------------------------------------
+// :: FONT
+// -------------------------------------------------------------------
+
+@mixin get-font($_name, $_url, $_weight: normal, $_style: normal) {
+
+	@font-face {
+		font-family: $_name;
+		src: url($_url + ".woff2") format("woff2"),
+				 url($_url + ".woff") format("woff");
+		font-weight: $_weight;
+		font-style: $_style;
+	}
+}

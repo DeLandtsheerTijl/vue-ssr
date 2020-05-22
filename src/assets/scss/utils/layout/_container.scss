@@ -1,0 +1,25 @@
+// ============================================================================
+// :: Container
+// ============================================================================
+.l-container {
+  @include respond-above($breakpoint-tablet-default) {
+    padding: 0;
+    max-width: $container-width-large;
+    margin: 0 auto;
+  }
+}
+
+.l-container--large {
+  @include respond-above($breakpoint-tablet-default) {
+    // max-width: $container-width-extra-large;
+  }
+}
+
+.l-container--full-height {
+  flex: 1;
+  min-height: calc(100vh - (#{$headerbar-height-md} + #{$footer-height-md}));
+
+  @include respond-above($breakpoint-tablet-default) {
+    min-height: calc(100vh - (#{$headerbar-height-lg} + #{$footer-height-lg}));
+  }
+}
